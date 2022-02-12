@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="max-w-screen-sm mx-auto flex flex-col items-center justify-center min-h-screen">
+        <div id="calculator-screen"
+            class="h-32 border border-gray-300 w-full text-right p-5 text-2xl align-text-bottom">
+            <div id="calculator-screen-big"></div>
+            <div id="calculator-screen-little" class="text-xs"></div>
+        </div>
+        <div id="calculator-body" class="w-full grid grid-cols-4 gap-4 mt-5 text-xl">
+            <button class="bg-gray-100 p-5">+</button>
+            <button class="bg-gray-100 p-5">-</button>
+            <button class="bg-gray-100 p-5">*</button>
+            <button class="bg-gray-100 p-5">/</button>
+            <button class="bg-gray-100 p-5">Clear</button>
+            <button class="bg-gray-100 p-5">1</button>
+            <button class="bg-gray-100 p-5">2</button>
+            <button class="bg-gray-100 p-5">3</button>
+            <button class="bg-gray-100 p-5">4</button>
+            <button class="bg-gray-100 p-5">5</button>
+            <button class="bg-gray-100 p-5">6</button>
+            <button class="bg-gray-100 p-5">7</button>
+            <button class="bg-gray-100 p-5">8</button>
+            <button class="bg-gray-100 p-5">9</button>
+            <button class="bg-gray-100 p-5">0</button>
+            <button class="bg-gray-100 p-5">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    const calculatorScreen = document.getElementById('calculator-screen-big');
+    const operators = ['+', '-', '*', '/'];
+    let values = '';
+    document.getElementById('calculator-body').addEventListener('click', function (event) {
+        if (event.target.classList[0] == "bg-gray-100") {
+            if (event.target.innerText == "Clear") {
+                calculatorScreen.innerText = "";
+            }
+            else if (event.target.innerText == "=") {
+                calculatorScreen.innerText = calculatorScreen.innerText + values.replace(/^0+/, '');
+                values = '';
+                document.getElementById('calculator-screen-little').innerText = "";
+                calculatorScreen.innerText = eval(calculatorScreen.innerText);
+
+            } else if (operators.indexOf(event.target.innerText) != -1) {
+                calculatorScreen.innerText = calculatorScreen.innerText + values.replace(/^0+/, '') + event.target.innerText;
+                values = '';
+                document.getElementById('calculator-screen-little').innerText = "";
+            }
+            else {
+                values += event.target.innerText;
+                document.getElementById('calculator-screen-little').innerText = values;
+
+            }
+        }
+    });
+
+    document.addEventListener("keyup", function (event) {
+
+        if (!isNaN(event.key) || event.key == "+" || event.key == "-" || event.key == "*" || event.key == "/") {
+            calculatorScreen.innerText = calculatorScreen.innerText + event.key;
+        } else if (event.keyCode == 8 || event.keyCode == 46) {
+            calculatorScreen.innerText = calculatorScreen.innerText.substr(0, calculatorScreen.innerText.length - 1);
+        }
+        else if (event.key == "Enter" || event.key == "=") {
+            calculatorScreen.innerText = eval(calculatorScreen.innerText);
+        }
+
+    })
+
+</script>
+
+</html>
