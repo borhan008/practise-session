@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-5xl text-center mt-16 font-semibold text-green-600">B<span class="text-green-800">AN</span>K
+        </h2>
+        <p class="text-xs text-center">Let's get some money.</p>
+    </header>
+    <main class="my-10">
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 w-3/4 mx-auto text-white mb-5">
+            <div class="bg-green-300 p-10">
+                <h3 class="text-3xl">Deposit</h3>
+                <h4 class="text-4xl">$<span id="deposit-amount">000</span></h4>
+            </div>
+            <div class="bg-green-400 p-10">
+                <h3 class="text-3xl">Withdraw</h3>
+                <h4 class="text-4xl">$<span id="withdraw-amount">000</span></h4>
+            </div>
+            <div class="bg-green-300 p-10">
+                <h3 class="text-3xl">Balance</h3>
+                <h4 class="text-4xl">$<span id="total-balance">1240</span></h4>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 w-3/4 mx-auto text-white mb-5 ">
+            <div class="bg-green-300 p-5 mb-8 md:mb-0">
+                <h3 class="text-2xl">Please Deposit</h3>
+                <form class="relative">
+                    <input class="block p-4 w-full border-2 border-gray-300 mb-2 rounded text-black" type="text" name=""
+                        id="deposit-field" placeholder="Deposit">
+                    <button class="bg-green-800 px-8 py-3 text-white  w-full font-bold absolute top-100" type="button"
+                        id="deposit-btn">Deposit</button>
+                </form>
+            </div>
+            <div class="bg-green-400 p-5">
+                <h3 class="text-2xl">Please Withdraw</h3>
+                <form class="relative">
+                    <input class="block p-4 w-full border-2 border-gray-300 mb-2 rounded  text-black" type="text"
+                        name="" placeholder="Withdraw" id="withdraw-field">
+                    <button class="bg-green-800 px-8 py-3 text-white  w-full font-bold absolute top-100" type="button"
+                        id="withdraw-btn">Withdraw</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="banking.js"></script>
+</body>
+
+</html>
