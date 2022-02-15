@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="tailwind.js"></script>
+</head>
+
+<body>
+    <div id="section-products"
+        class="min-h-screen max-w-screen-md w-full flex flex-col items-center justify-center mx-auto gap-2">
+        <div class="border border-gray-100 shadow-md p-5 flex justify-center items-center gap-10">
+            <div class="w-64">
+                <img src="https://via.placeholder.com/100/100" alt="" srcset="">
+            </div>
+            <div class="heading max-w-screen-xs">
+                <h2 class="text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, harum!</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="btn-minus bg-black text-white w-8 rounded-full h-8 text-2xl">-</button>
+                <input type="number" name="" id="" value="1" class="bg-white border border-gray-100 h-8 w-8">
+                <button class="btn-plus bg-black text-white w-8 rounded-full h-8 text-2xl">+</button>
+            </div>
+            <div class="price text-2xl">
+                $120
+            </div>
+        </div>
+        <div class="border border-gray-100 shadow-md p-5 flex justify-center items-center gap-10">
+            <div class="w-64">
+                <img src="https://via.placeholder.com/100/100" alt="" srcset="">
+            </div>
+            <div class="heading max-w-screen-xs">
+                <h2 class="text-2xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, harum!</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="btn-minus bg-black text-white w-8 rounded-full h-8 text-2xl">-</button>
+                <input type="number" name="" value="1" id="" class="bg-white border border-gray-100 h-8 w-8">
+                <button class="btn-plus bg-black text-white w-8 rounded-full h-8 text-2xl">+</button>
+            </div>
+            <div class="price text-2xl">
+                $10
+            </div>
+        </div>
+        <div
+            class="border border-gray-100 shadow-md p-5 flex justify-end items-center gap-10 text-2xl text-right w-full">
+            Total : <div id="total-price"></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('section-products').addEventListener('click', function (event) {
+
+        if (event.target.classList.contains("btn-plus")) {
+            if ((parseInt(event.target.parentNode.children[1].value)) == 0) {
+                event.target.parentNode.parentNode.children[3].innerText = '$' + event.target.parentNode.children[0].getAttribute('data-price');
+                event.target.parentNode.children[1].value = parseInt(event.target.parentNode.children[1].value) + 1;
+            } else {
+                const priceOfOne = parseInt(event.target.parentNode.parentNode.children[3].innerText.slice(1)) / parseInt(event.target.parentNode.children[1].value);
+                event.target.parentNode.children[1].value = parseInt(event.target.parentNode.children[1].value) + 1;
+                event.target.parentNode.parentNode.children[3].innerText = '$' + (priceOfOne * event.target.parentNode.children[1].value);
+            }
+        }
+        if (event.target.classList.contains("btn-minus")) {
+            if ((parseInt(event.target.parentNode.children[1].value) - 1) > 0) {
+                const priceOfOne = parseInt(event.target.parentNode.parentNode.children[3].innerText.slice(1)) / parseInt(event.target.parentNode.children[1].value);
+                event.target.parentNode.children[1].value = parseInt(event.target.parentNode.children[1].value) - 1;
+                event.target.parentNode.parentNode.children[3].innerText = '$' + (priceOfOne * event.target.parentNode.children[1].value);
+            } else if ((parseInt(event.target.parentNode.children[1].value) - 1) == 0) {
+                const priceOfOne = parseInt(event.target.parentNode.parentNode.children[3].innerText.slice(1));
+                event.target.parentNode.children[1].value = parseInt(event.target.parentNode.children[1].value) - 1;
+                event.target.parentNode.parentNode.children[3].innerText = '$000';
+                event.target.setAttribute('data-price', priceOfOne);
+            }
+
+        }
+        getCalculate();
+
+    });
+
+    function getCalculate() {
+        const price_all = document.getElementsByClassName('price');
+        let sum = 0;
+        for (i = 0; i < price_all.length; i++) {
+            sum += parseInt(price_all[i].innerText.slice(1));
+        }
+        document.getElementById('total-price').innerText = '$' + sum;
+    }
+    getCalculate();
+
+</script>
+
+</html>
