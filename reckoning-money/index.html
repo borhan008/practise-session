@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reckoning Monthly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/7ceb067bec.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="container text-center my-5 mx-auto">
+        <h2 class="text-2xl text-purple-900 font-bold md:text-5xl">Recko<span class="text-purple-700">ning
+                Mo</span>nthly <i class="fas fa-hand-holding-usd text-purple-800"></i>
+        </h2>
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="container flex flex-col md:flex-row justify-between items-center gap-5  mx-auto">
+        <!-- side banner start -->
+        <section class="side-banner flex-1 text-center md:max-w-xs lg:max-w-none">
+            <img src="images/banner.png" alt="" class="max-w-xs w-100 md:max-w-100  lg:max-w-full">
+        </section>
+        <!-- side banner end -->
+
+
+        <!-- calculator area start -->
+        <section id="calcualtor-area"
+            class="flex-1 flex flex-col justify-center items-center bg-gray-100 w-full p-5 mt-5 md:mt-0">
+            <p id="err" class="text-red-500 font-bold hidden"></p>
+
+            <!-- income,expenses area end-->
+            <h3 class="text-2xl text-gray-900 mb-5">Income</h3>
+
+            <div class="flex items-center justify-center w-full">
+                <label for="income-input" class="w-14 mr-3 text-right">Income:</label>
+                <input type="text" id="income-input" placeholder="Income "
+                    class="max-w-xs flex-1 p-2 border border-gray outline-0 focus:border-black">
+            </div>
+            <h3 class="text-2xl text-gray-900 m-5">Expenses</h3>
+            <div class="flex items-center justify-center w-full mb-3">
+                <label for="food-input" class="w-14 mr-3 text-right">Food:</label>
+                <input type="text" id="food-input" placeholder="Food"
+                    class="max-w-xs flex-1 p-2 border border-gray outline-0 focus:border-black">
+            </div>
+            <div class="flex items-center justify-center w-full mb-3">
+                <label for="rent-input" class="w-14 mr-3 text-right">Rent:</label>
+                <input type="text" id="rent-input" placeholder="Rent"
+                    class="max-w-xs flex-1 p-2 border border-gray outline-0 focus:border-black">
+            </div>
+            <div class="flex items-center justify-center w-full mb-3">
+                <label for="clothes-input" class="w-14 mr-3 text-right">Clothes:</label>
+                <input type="text" id="clothes-input" placeholder="Clothes"
+                    class="max-w-xs flex-1 p-2 border border-gray outline-0 focus:border-black ">
+            </div>
+
+            <button id="btn-calculate"
+                class="bg-purple-900 p-2 w-full max-w-xs text-white font-bold rounded-md hover:bg-purple-800">Calculate</button>
+
+            <div class="text-2xl  my-5 text-center flex flex-col gap-3 hidden after-calculate">
+                <h3>Total Expenses: <span id="total-expenses">000</span></h3>
+                <h3>Balance: <span id="total-balance">000</span></h3>
+            </div>
+            <!-- income,expenses area end-->
+
+            <!-- saving area start -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-3 mt-5 w-full max-w-sm ">
+                <label for="save-input">Save</label>
+                <input type="text" id="save-input" placeholder="Save"
+                    class="max-w-xs flex-1 p-2 border border-gray outline-0 focus:border-black text-center">
+                <span>%</span>
+                <button id="btn-save"
+                    class="bg-purple-900 py-2 max-w-xs w-full text-white font-bold rounded-md hover:bg-purple-800 disabled:bg-purple-500"
+                    disabled="true">Save</button>
+
+            </div>
+            <div class="text-2xl  mt-5 text-center flex flex-col gap-3 hidden after-saving-calc">
+                <h3>Saving Amount: <span id="saving-amount">000</span></h3>
+                <h3>Remaining Balance: <span id="remaining-balance">000</span></h3>
+            </div>
+            <!-- saving area end -->
+
+        </section>
+        <!-- calculator area start -->
+
+    </main>
+    <!-- main start -->
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
