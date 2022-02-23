@@ -57,7 +57,7 @@ const showHadiths = data => {
         console.log(hadith);
         const createSingleHadithDiv = document.createElement('div');
         if (hadith['hadithBengali'] !== undefined) {
-            const hadithText = hadith.hadithBengali.replace(new RegExp("<p dir='RTL'>", "g"), '<br/><br/><br/>').replace(new RegExp(']', "g"), ']<br/><br/>').replace(new RegExp('<hr />', 'g'), '<br/>');
+            const hadithText = hadith.hadithBengali.replace(new RegExp("<p dir='RTL'>", "g"), '<br/><br/><br/>').replace(new RegExp(']', "g"), ']<br/><br/>').replace(new RegExp('<hr />', 'g'), '<br/>').replace(new RegExp('﴿', 'g'), '<p class="mt-6 text-3xl">').replace(new RegExp('﴾', 'g'), '</p>');
             createSingleHadithDiv.innerHTML = `
             <div class="bg-blue-800 p-2 mb-2 text-white text-2xl">
                 <p class="text-white py-2">
