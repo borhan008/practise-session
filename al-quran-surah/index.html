@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Quran</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="hidden mx-auto w-full  min-h-screen max-h-screen md:flex">
+        <div class="bg-yellow-300 w-1/4 flex flex-col">
+            <h2 class="p-2 text-center text-2xl bangla text-black font-bold mt-1">আল-কুরআন</h2>
+            <div id="surah-list" class="mt-2 flex-1 overflow-y-scroll w-full scroll-bar">
+
+            </div>
+
+        </div>
+        <div id="surah-details" class="flex-1 max-h-screen min-h-screen overflow-y-scroll bg-yellow-100 scroll-bar">
+            <div class="justify-center items-center min-h-full flex-col flex">
+                <h2 class="text-black text-3xl bangla font-bold">Al Quran for Desktop</h2>
+                <p class="font-bold">API: github.com/risan/quran-json
+                </p>
+                <p class="font-bold">everyayah.com
+                </p>
+                <p class="font-bold">github/sultanulborhan
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="api.js"></script>
+</body>
+
+</html>

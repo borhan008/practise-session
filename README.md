@@ -7,7 +7,8 @@
             <li><a href="https://sultanulborhan.github.io/practise-session//todoList/index.html" class="">ToDo List</a></li>
             <li><a href="https://sultanulborhan.github.io/practise-session//tailwind/index.html" class="">Design Using Tailwind</a></li>
             <li><a href="https://sultanulborhan.github.io/practise-session/reckoning-money/index.html" class="hover:underline">Reckoning Money</a></li>
-            <li><a href="https://sultanulborhan.github.io/practise-session/al-quran/index.html" class="hover:underline">Al Quran</a></li>
+            <li><a href="https://sultanulborhan.github.io/practise-session/al-quran/index.html" class="hover:underline">Al Quran Full</a></li>
             <li><a href="https://sultanulborhan.github.io/practise-session/al-hadith-bangla/index.html" class="hover:underline">Al Hadith</a></li>
+            <li><a href="https://sultanulborhan.github.io/practise-session/al-quran-surah/index.html" class="hover:underline">Al Quran Surah</a></li>
 
 </ol>
