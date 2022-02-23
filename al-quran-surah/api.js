@@ -41,6 +41,8 @@ function gettingData(surahId) {
 
 const showSurah = (data) => {
     const container = document.getElementById('surah-details');
+    container.scrollTop = 0;
+
     container.textContent = "";
 
     const div = document.createElement('div');
