@@ -10,5 +10,6 @@
             <li><a href="https://sultanulborhan.github.io/practise-session/al-quran/index.html" class="hover:underline">Al Quran Full</a></li>
             <li><a href="https://sultanulborhan.github.io/practise-session/al-hadith-bangla/index.html" class="hover:underline">Al Hadith</a></li>
             <li><a href="https://sultanulborhan.github.io/practise-session/al-quran-surah/index.html" class="hover:underline">Al Quran Surah</a></li>
+            <li><a href="https://sultanulborhan.github.io/practise-session/phone-finder/index.html" class="hover:underline">Phone Finder</a></li>
 
 </ol>
