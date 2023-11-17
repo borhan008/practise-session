@@ -16,7 +16,7 @@
 }
 
 .scroll-bar::-webkit-scrollbar-thumb {
-    background-color: rgb(212, 201, 101);
-    outline: 0px solid yellow;
+    background-color: rgba(0, 0, 0, 0.244);
+    outline: 0px solid rgba(0, 0, 0, 0.244);
 }
 
